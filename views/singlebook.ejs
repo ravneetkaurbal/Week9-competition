@@ -1,0 +1,30 @@
+<!-- Define a function to render the book -->
+<% function renderBook(book) { %>
+    <div class="item-details">
+      <article>
+        <h2>Title: <%= book.title %></h2>
+        <p>Author: <%= book.author %></p>
+        <p>Genre: <%= book.genre %></p>
+    
+        <!-- Update button -->
+        <form
+          class="action-form"
+          method="GET"
+          action="/single-book/update/<%= book._id %>"
+        >
+          <button type="submit" class="update">Update</button>
+        </form>
+    
+        <!-- Delete button -->
+        <form
+          class="action-form"
+          method="POST"
+          action="/single-book/<%= book._id %>?_method=DELETE"
+        >
+          <button type="submit">Delete</button>
+        </form>
+      </article>
+    </div>
+  <% } %>
+
+  
